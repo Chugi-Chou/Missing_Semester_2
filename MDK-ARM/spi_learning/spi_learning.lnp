@@ -1,6 +1,8 @@
 --cpu=Cortex-M4.fp.sp
 "spi_learning\startup_stm32f407xx.o"
-"spi_learning\main.o"
+"spi_learning\imu_module_new.o"
+"spi_learning\usercode.o"
+"spi_learning\main_1.o"
 "spi_learning\gpio.o"
 "spi_learning\spi.o"
 "spi_learning\tim.o"
