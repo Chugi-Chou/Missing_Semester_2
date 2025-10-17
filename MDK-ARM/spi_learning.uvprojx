@@ -389,6 +389,16 @@
               <FileType>2</FileType>
               <FilePath>startup_stm32f407xx.s</FilePath>
             </File>
+            <File>
+              <FileName>imu_module_new.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Core\Src\imu_module_new.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>usercode.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Core\Src\usercode.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

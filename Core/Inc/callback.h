@@ -8,5 +8,6 @@
 #include "bmi088.h"
 #include "main.h"
 #include "tim.h"
+#include "imu_module_new.h"
 
 #endif //CALLBACK_H
