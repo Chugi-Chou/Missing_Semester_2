@@ -3,10 +3,26 @@
 //
 
 #include "callback.h"
+
 #include "can.h"
 #include "m3508_motor.h"
 
 m3508_motor Motor_0(19);
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+    extern CAN_TxHeaderTypeDef tx_header;
+    extern CAN_RxHeaderTypeDef rx_header;
+    extern CAN_FilterTypeDef filter;
+    extern uint8_t tx_data[8];
+    extern uint8_t rx_data[8];
+    extern uint32_t can_tx_mail_box_;
+
+#ifdef __cplusplus
+    }
+#endif
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == htim6.Instance) {

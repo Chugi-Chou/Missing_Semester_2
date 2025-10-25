@@ -1,9 +1,5 @@
 spi_learning/usercode.o: ..\Core\Src\usercode.cpp ..\Core\Inc\usercode.h \
-  ..\Core\Inc\imu_module_new.h ..\Core\Inc\bmi088.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  ..\Core\Inc\..\Inc\main.h \
+  ..\Core\Inc\can.h ..\Core\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
@@ -11,6 +7,9 @@ spi_learning/usercode.o: ..\Core\Src\usercode.cpp ..\Core\Inc\usercode.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
   ..\Drivers\CMSIS\Include\core_cm4.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdint.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__config \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\Drivers\CMSIS\Include\cmsis_version.h \
   ..\Drivers\CMSIS\Include\cmsis_compiler.h \
   ..\Drivers\CMSIS\Include\cmsis_armclang.h \
@@ -26,6 +25,7 @@ spi_learning/usercode.o: ..\Core\Src\usercode.cpp ..\Core\Inc\usercode.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_can.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
@@ -34,7 +34,8 @@ spi_learning/usercode.o: ..\Core\Src\usercode.cpp ..\Core\Inc\usercode.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
-  ..\Core\Inc\main.h \
+  ..\Core\Inc\bmi088.h ..\Core\Inc\..\Inc\main.h ..\Core\Inc\tim.h \
+  ..\Core\Inc\imu_module_new.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__type_traits\promote.h \

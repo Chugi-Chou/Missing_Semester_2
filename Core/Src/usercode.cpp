@@ -10,6 +10,21 @@
 
 extern float Roll, Pitch, Yaw;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+    extern CAN_TxHeaderTypeDef tx_header;
+    extern CAN_RxHeaderTypeDef rx_header;
+    extern CAN_FilterTypeDef filter;
+    extern uint8_t tx_data[8];
+    extern uint8_t rx_data[8];
+    extern CAN_FilterTypeDef filter_config;
+
+#ifdef __cplusplus
+}
+#endif
+
 void userinit() {
     imu_module_init();
     HAL_CAN_ConfigFilter(&hcan1, &filter_config);

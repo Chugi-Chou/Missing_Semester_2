@@ -26,6 +26,7 @@ spi_learning/callback.o: ..\Core\Src\callback.cpp ..\Core\Inc\callback.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_can.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
@@ -172,4 +173,5 @@ spi_learning/callback.o: ..\Core\Src\callback.cpp ..\Core\Inc\callback.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdint \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h ..\Core\Inc\can.h \
+  ..\Core\Inc\m3508_motor.h
