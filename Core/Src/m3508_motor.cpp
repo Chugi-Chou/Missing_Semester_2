@@ -3,6 +3,7 @@
 //
 
 #include "m3508_motor.h"
+#include "pid.h"
 
 float linearMapping(int in, int in_min, int in_max, float out_min, float out_max) {
     float temp = out_min + (in - in_min) * (out_max - out_min) / (in_max - in_min);

@@ -60,6 +60,8 @@ set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F407IGHX_FLASH.ld
         Core/Inc/m3508_Motor.h
         Core/Src/DT_7_Remote_Control.cpp
         Core/Inc/DT_7_Remote_Control.h
+        Core/Src/pid.cpp
+        Core/Inc/pid.h
 )
 
 add_link_options(-Wl,-gc-sections,--print-memory-usage,-Map=${PROJECT_BINARY_DIR}/${PROJECT_NAME}.map)
