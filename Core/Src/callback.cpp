@@ -4,10 +4,14 @@
 
 #include "callback.h"
 
+#include <cstring>
+
+#include "DT_7_Remote_Control.h"
 #include "can.h"
 #include "m3508_motor.h"
 
 m3508_motor Motor_0(19);
+dt_7 newController;
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,6 +28,9 @@ extern "C" {
     }
 #endif
 
+extern uint8_t uart_rx_buf[18];
+extern uint8_t uart_rx_data[18];
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
     if (htim->Instance == htim6.Instance) {
         imu_module_update();
@@ -37,5 +44,19 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan) {
         if (rx_header.StdId == 0x201) {
             Motor_0.canRxMsgCallback(rx_data);
         }
+    }
+}
+
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
+    static uint8_t frame_index = 0;
+    if (huart->Instance == USART3) {
+        if (__HAL_DMA_GET_COUNTER(huart->hdmarx) == 0) {
+            for (uint8_t i = 0; i < Size; i++) {
+                uart_rx_data[i] = uart_rx_buf[i];
+            }
+            newController.process_rc_frame(uart_rx_data, 18);
+        }
+        else {}
+        HAL_UARTEx_ReceiveToIdle_DMA(huart, uart_rx_buf, 18);
     }
 }

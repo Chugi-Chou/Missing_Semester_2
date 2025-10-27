@@ -1,4 +1,4 @@
-spi_learning/can.o: ..\Core\Src\can.c ..\Core\Inc\can.h \
+spi_learning/usart.o: ..\Core\Src\usart.c ..\Core\Inc\usart.h \
   ..\Core\Inc\main.h ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Core\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \

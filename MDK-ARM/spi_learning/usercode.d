@@ -34,6 +34,7 @@ spi_learning/usercode.o: ..\Core\Src\usercode.cpp ..\Core\Inc\usercode.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   ..\Core\Inc\bmi088.h ..\Core\Inc\..\Inc\main.h ..\Core\Inc\tim.h \
   ..\Core\Inc\imu_module_new.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
@@ -173,4 +174,5 @@ spi_learning/usercode.o: ..\Core\Src\usercode.cpp ..\Core\Inc\usercode.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdint \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h ..\Core\Inc\usart.h \
+  ..\Core\Inc\DT_7_Remote_Control.h

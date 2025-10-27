@@ -35,6 +35,7 @@ spi_learning/imu_module_new.o: ..\Core\Src\imu_module_new.cpp \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   ..\Core\Inc\main.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \

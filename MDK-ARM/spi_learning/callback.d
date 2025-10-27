@@ -35,6 +35,7 @@ spi_learning/callback.o: ..\Core\Src\callback.cpp ..\Core\Inc\callback.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   ..\Core\Inc\main.h ..\Core\Inc\tim.h ..\Core\Inc\imu_module_new.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
@@ -173,5 +174,9 @@ spi_learning/callback.o: ..\Core\Src\callback.cpp ..\Core\Inc\callback.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstdint \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h ..\Core\Inc\can.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\cstring \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  ..\Core\Inc\DT_7_Remote_Control.h ..\Core\Inc\can.h \
   ..\Core\Inc\m3508_motor.h

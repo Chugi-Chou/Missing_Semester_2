@@ -25,4 +25,6 @@ public:
     void canRxMsgCallback(const uint8_t rx_data[8]);
 } ;
 
+float linearMapping(int in, int in_min, int in_max, float out_min, float out_max);
+
 #endif //M3508_MOTOR_H

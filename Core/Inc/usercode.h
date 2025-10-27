@@ -17,5 +17,4 @@ extern "C" {
 }
 #endif
 
-
 #endif //USERCODE_H
