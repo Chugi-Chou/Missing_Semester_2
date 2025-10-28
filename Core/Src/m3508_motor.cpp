@@ -3,7 +3,8 @@
 //
 
 #include "m3508_motor.h"
-#include "pid.h"
+
+extern uint8_t txdata[8];
 
 float linearMapping(int in, int in_min, int in_max, float out_min, float out_max) {
     float temp = out_min + (in - in_min) * (out_max - out_min) / (in_max - in_min);
@@ -23,4 +24,71 @@ void m3508_motor::canRxMsgCallback(const uint8_t rx_data[8]) {
     current_ = (rx_data[4] << 8) | rx_data[5];
     temp_ = rx_data[6];
     last_ecd_angle_ = ecd_angle_;
+
+    fdb_speed_ = rotate_speed_;
+    fdb_angle_ = angle_;
+    output_intensity_ = current_;
+}
+
+void m3508_motor::SetIntensity(float intensity) {
+    control_method_ = TORQUE;
+    output_intensity_ = intensity;
+
+    if (output_intensity_ > 20.0f) output_intensity_ = 20.0f;
+    if (output_intensity_ < -20.0f) output_intensity_ = -20.0f;
+
+    int16_t cmd = (int16_t)(output_intensity_ * 16384.0f / 20.0f);
+    if (cmd > 16384) cmd = 16384;
+    if (cmd < -16384) cmd = -16384;
+
+    txdata = {0};
+    txdata[0] = (cmd >> 8) & 0xFF;
+    txdata[1] = cmd & 0xFF;
+}
+
+void m3508_motor::SetSpeed(float speed, float feedforward_intensity) {
+    control_method_ = SPEED;
+    target_speed_ = speed;
+    fdb_speed_ = rotate_speed_;
+
+    float torque = spid_.calc(target_speed_, fdb_speed_);
+    torque += feedforward_intensity;
+
+    if (torque > 20.0f) torque = 20.0f;
+    if (torque < -20.0f) torque = -20.0f;
+    output_intensity_ = torque;
+
+    int16_t cmd = (int16_t)(torque * 16384.0f / 20.0f);
+    if (cmd > 16384) cmd = 16384;
+    if (cmd < -16384) cmd = -16384;
+
+    txdata = {0};
+    txdata[0] = (cmd >> 8) & 0xFF;
+    txdata[1] = cmd & 0xFF;
+
+}
+
+void m3508_motor::SetPosition(float target_position, float feedforward_speed, float feedforward_intensity) {
+    control_method_ = POSITION_SPEED;
+    target_angle_ = target_position;
+    fdb_angle_ = angle_;
+
+    target_speed_ = ppid_.calc(target_angle_, fdb_angle_);
+    target_speed_ += feedforward_speed;
+
+    fdb_speed_ = rotate_speed_;
+    float torque = spid_.calc(target_speed_, fdb_speed_);
+    torque += feedforward_intensity;
+
+    if (torque > 20.0f) torque = 20.0f;
+    if (torque < -20.0f) torque = -20.0f;
+    output_intensity_ = torque;
+
+    int16_t cmd = (int16_t)(torque * 16384.0f / 20.0f);
+    if (cmd > 16384) cmd = 16384;
+    if (cmd < -16384) cmd = -16384;
+
+    txdata = {0};
+    txdata[0] = (cmd >> 8) & 0xFF;
+    txdata[1] = cmd & 0xFF;
 }

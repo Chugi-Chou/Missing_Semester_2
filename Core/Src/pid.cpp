@@ -13,7 +13,6 @@ PID::PID(float kp, float ki, float kd, float i_max, float out_max, float d_filte
       pout_(0.0f), iout_(0.0f), dout_(0.0f), last_dout_(0.0f),
       output_(0.0f) {}
 
-// 重置PID状态
 void PID::reset(void) {
     err_ = 0.0f;
     err_sum_ = 0.0f;
@@ -25,7 +24,6 @@ void PID::reset(void) {
     output_ = 0.0f;
 }
 
-// PID计算函数
 float PID::calc(float ref, float fdb) {
     ref_ = ref;
     fdb_ = fdb;
